@@ -1,0 +1,35 @@
+﻿Titles
+----
+Title_Id PK varchar(10)
+Title UNIQUE varchar(50)
+
+Employee
+-
+Emp_No PK int
+Emp_title_id varchar(10) FK >- Titles.Title_Id
+Birth_Date Date 
+First_Name varchar(50) INDEX
+Last_Name varchar(50) INDEX
+Sex varchar(1)
+Hire_Date Date
+
+Departments 
+-
+Dept_No PK varchar(10)
+Dept_Name varchar(50) UNIQUE 
+
+Salaries
+-
+Emp_No int FK - Employee.Emp_No
+Salary int
+
+Dept_Emp
+-
+Emp_No  int FK - Employee.Emp_No
+Dept_No varchar(10) FK >- Departments.Dept_No
+
+Dept_Manager
+----
+Dept_No varchar(10) FK >- Departments.Dept_No
+Emp_No  int FK - Employee.Emp_No
+
